@@ -20,13 +20,15 @@ group by flight_no,journey_date) k where departure_date=j_date;
 
 DELIMITER ;
 
+
+
 CREATE TABLE `admin` (
   `admin_id` varchar(20) NOT NULL,
   `pwd` varchar(30) DEFAULT NULL,
   `staff_id` varchar(20) DEFAULT NULL,
   `name` varchar(20) DEFAULT NULL,
   `email` varchar(35) DEFAULT NULL
-) 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 
@@ -42,7 +44,7 @@ CREATE TABLE `customer` (
   `email` varchar(35) DEFAULT NULL,
   `phone_no` varchar(15) DEFAULT NULL,
   `address` varchar(35) DEFAULT NULL
-) 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 
@@ -69,17 +71,22 @@ CREATE TABLE `flight_details` (
   `price_economy` int(10) DEFAULT NULL,
   `price_business` int(10) DEFAULT NULL,
   `jet_id` varchar(10) DEFAULT NULL
-)
-
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 INSERT INTO `flight_details` (`flight_no`, `from_city`, `to_city`, `departure_date`, `arrival_date`, `departure_time`, `arrival_time`, `seats_economy`, `seats_business`, `price_economy`, `price_business`, `jet_id`) VALUES
-('AA101', 'Atlanta', 'New York City', '2021-05-30', '2021-06-10', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
-('AA102', 'Atlanta', 'New York City', '2021-06-01', '2021-06-01', '10:00:00', '12:00:00', 200, 73, 2500, 3000, '10002'),
+('AA196', 'Atlanta', 'New York City', '2021-05-01', '2021-05-10', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA197', 'Atlanta', 'New Jersey', '2021-05-04', '2021-05-18', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA198', 'Atlanta', 'Boston', '2021-05-06', '2021-06-22', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA099', 'Atlanta', 'Long Island', '2021-06-01', '2021-06-10', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA100', 'Atlanta', 'Austin', '2021-06-04', '2021-06-14', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA101', 'Atlanta', 'San Francisco', '2021-06-10', '2021-06-20', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA102', 'Atlanta', 'Cancun', '2021-06-01', '2021-06-01', '10:00:00', '12:00:00', 200, 73, 2500, 3000, '10002'),
 ('AA103', 'Atlanta', 'Los Angeles', '2021-06-03', '2021-06-03', '17:00:00', '17:45:00', 150, 75, 1200, 1500, '10004'),
 ('AA104', 'Atlanta', 'Houston', '2021-07-04', '2021-07-04', '09:00:00', '09:17:00', 37, 4, 500, 750, '10003'),
-('AA104', 'Atlanta', 'Virginia', '2021-07-10', '2021-07-10', '09:00:00', '10:20:00', 37, 4, 500, 750, '10003'),
-('AA106', 'Atlanta', 'Seattle', '2021-07-01', '2021-07-01', '13:00:00', '14:00:00', 150, 75, 3000, 3750, '10004');
+('AA105', 'Atlanta', 'Washington DC', '2021-07-10', '2021-07-10', '09:00:00', '10:20:00', 37, 4, 500, 750, '10003'),
+('AA106', 'Atlanta', 'Washington', '2021-07-01', '2021-07-01', '13:00:00', '14:00:00', 150, 75, 3000, 3750, '10004');
+
 
 
 
@@ -87,7 +94,7 @@ CREATE TABLE `frequent_flier_details` (
   `frequent_flier_no` varchar(20) NOT NULL,
   `customer_id` varchar(20) DEFAULT NULL,
   `mileage` int(10) DEFAULT NULL
-) 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 
@@ -96,12 +103,13 @@ INSERT INTO `frequent_flier_details` (`frequent_flier_no`, `customer_id`, `milea
 ('20002000', 'harryroshan', 150);
 
 
+
 CREATE TABLE `jet_details` (
   `jet_id` varchar(10) NOT NULL,
   `jet_type` varchar(20) DEFAULT NULL,
   `total_capacity` int(5) DEFAULT NULL,
   `active` varchar(5) DEFAULT NULL
-) 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 
@@ -122,7 +130,9 @@ CREATE TABLE `passengers` (
   `gender` varchar(8) DEFAULT NULL,
   `meal_choice` varchar(5) DEFAULT NULL,
   `frequent_flier_no` varchar(20) DEFAULT NULL
-) 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 
 INSERT INTO `passengers` (`passenger_id`, `pnr`, `name`, `age`, `gender`, `meal_choice`, `frequent_flier_no`) VALUES
 (1, '1669050', 'Harry Roshan', 20, 'male', 'yes', '20002000'),
@@ -156,7 +166,7 @@ CREATE TABLE `payment_details` (
   `payment_date` date DEFAULT NULL,
   `payment_amount` int(6) DEFAULT NULL,
   `payment_mode` varchar(15) DEFAULT NULL
-) 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 
@@ -170,7 +180,9 @@ INSERT INTO `payment_details` (`payment_id`, `pnr`, `payment_date`, `payment_amo
 ('665360715', '5421865', '2021-07-04', 15750, 'net banking'),
 ('862686553', '3027167', '2021-07-04', 10700, 'debit card');
 
-
+--
+-- Triggers `payment_details`
+--
 DELIMITER $$
 CREATE TRIGGER `update_ticket_after_payment` AFTER INSERT ON `payment_details` FOR EACH ROW UPDATE ticket_details
      SET booking_status='CONFIRMED', payment_id= NEW.payment_id
@@ -193,7 +205,7 @@ CREATE TABLE `ticket_details` (
   `insurance` varchar(5) DEFAULT NULL,
   `payment_id` varchar(20) DEFAULT NULL,
   `customer_id` varchar(20) DEFAULT NULL
-) 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 
@@ -206,6 +218,7 @@ INSERT INTO `ticket_details` (`pnr`, `date_of_reservation`, `flight_no`, `journe
 ('5421865', '2021-07-01', 'AA101', '2021-08-01', 'economy', 'CONFIRMED', 3, 'no', 'no', 'no', '665360715', 'harryroshan'),
 ('6980157', '2021-07-02', 'AA101', '2021-08-02', 'economy', 'CANCELED', 2, 'yes', 'yes', 'yes', '557778944', 'aadith'),
 ('8503285', '2021-07-02', 'AA102', '2021-08-03', 'business', 'CONFIRMED', 2, 'yes', 'yes', 'no', '165125569', 'aadith');
+
 
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
@@ -260,6 +273,7 @@ ALTER TABLE `passengers`
   ADD CONSTRAINT `passengers_ibfk_1` FOREIGN KEY (`pnr`) REFERENCES `ticket_details` (`pnr`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `passengers_ibfk_2` FOREIGN KEY (`frequent_flier_no`) REFERENCES `frequent_flier_details` (`frequent_flier_no`) ON UPDATE CASCADE;
 
+
 ALTER TABLE `payment_details`
   ADD CONSTRAINT `payment_details_ibfk_1` FOREIGN KEY (`pnr`) REFERENCES `ticket_details` (`pnr`) ON UPDATE CASCADE;
 
@@ -268,4 +282,5 @@ ALTER TABLE `ticket_details`
   ADD CONSTRAINT `ticket_details_ibfk_2` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `ticket_details_ibfk_3` FOREIGN KEY (`flight_no`,`journey_date`) REFERENCES `flight_details` (`flight_no`, `departure_date`) ON DELETE SET NULL ON UPDATE CASCADE;
 COMMIT;
+
 
