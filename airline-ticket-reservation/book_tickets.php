@@ -58,17 +58,23 @@
 					<td class="fix_table">
 						<input list="origins" name="origin" placeholder="From" required>
   						<datalist id="origins">
-  						  	<option value="bangalore">
+  						  	<option value="Atlanta">
   						</datalist>
 						<!-- <input type="text" name="origin" placeholder="From" required> --></td>
 					<td class="fix_table">
 						<input list="destinations" name="destination" placeholder="To" required>
   						<datalist id="destinations">
-  						  	<option value="mumbai">
-  						  	<option value="mysore">
-  						  	<option value="mangalore">
-  						  	<option value="chennai">
-  						  	<option value="hyderabad">
+  						  	<option value="New York City">
+  						  	<option value="New Jersey">
+  						  	<option value="Boston">
+  						  	<option value="Long Island">
+  						  	<option value="Austin">
+							<option value="San Francisco">
+							<option value="Cancun">
+							<option value="Los Angeles">
+							<option value="Houston">
+							<option value="Washington DC">
+							<option value="Washington">
   						</datalist>
 						<!-- <input type="text" name="destination" placeholder="To" required> --></td>
 				</tr>
@@ -82,14 +88,14 @@
 				<tr>
 					<td class="fix_table"><input type="date" name="dep_date" min=
 						<?php 
-							$todays_date=date('Y-m-d'); 
+							$todays_date=date('m-d-Y'); 
 							echo $todays_date;
 						?> 
 						max=
 						<?php 
-							$max_date=date_create(date('Y-m-d'));
+							$max_date=date_create(date('m-d-Y'));
 							date_add($max_date,date_interval_create_from_date_string("90 days")); 
-							echo date_format($max_date,"Y-m-d");
+							echo date_format($max_date,"m-d-Y");
 						?> required></td>
 					<td class="fix_table"><input type="number" name="no_of_pass" placeholder="Eg. 5" required></td>
 				</tr>
@@ -111,9 +117,5 @@
 			<br>
 			<input type="submit" value="Search for Available Flights" name="Search">
 		</form>
-		<!--Following data fields were empty!
-			...
-			ADD VIEW FLIGHT DETAILS AND VIEW JETS/ASSETS DETAILS for ADMIN
-		-->
 	</body>
 </html>
