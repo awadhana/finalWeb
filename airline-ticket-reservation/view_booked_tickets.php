@@ -51,10 +51,10 @@
 		<h2>VIEW BOOKED FLIGHT TICKETS</h2>
 		<h3 class='set_nice_size'><center><u>Upcoming Trips</u></center></h3>
 		<?php
-			$todays_date=date('Y-m-d');
-			$thirty_days_before_date=date_create(date('Y-m-d'));
+			$todays_date=date('m-d-Y');
+			$thirty_days_before_date=date_create(date('m-d-Y'));
 			date_sub($thirty_days_before_date,date_interval_create_from_date_string("30 days")); 
-			$thirty_days_before_date=date_format($thirty_days_before_date,"Y-m-d");
+			$thirty_days_before_date=date_format($thirty_days_before_date,"m-d-Y");
 			
 			$customer_id=$_SESSION['login_user'];
 			require_once('Database Connection file/mysqli_connect.php');
