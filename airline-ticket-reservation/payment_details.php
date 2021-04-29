@@ -48,7 +48,7 @@
 				$payment_id=rand(100000000,999999999);
 				$pnr=$_SESSION['pnr'];
 				$_SESSION['payment_id']=$payment_id;
-				$payment_date=date('Y-m-d'); 
+				$payment_date=date('m-d-Y'); 
 				$_SESSION['payment_date']=$payment_date;
 
 
