@@ -25,7 +25,7 @@
 				{
 					require_once('Database Connection file/mysqli_connect.php');
 
-					$todays_date=date('m-d-Y'); 
+					$todays_date=date('Y-m-d'); 
 					$customer_id=$_SESSION['login_user'];
 
 					$query="SELECT count(*) from Ticket_Details t WHERE pnr=? and journey_date>=?";
