@@ -11,7 +11,7 @@
 			if(isset($_POST['Submit']))
 			{
 				$pnr=rand(1000000,9999999);
-				$date_of_res=date("m-d-Y");
+				$date_of_res=date("Y-m-d");
 				$flight_no=$_SESSION['flight_no'];
 				$journey_date=$_SESSION['journey_date'];
 				$class=$_SESSION['class'];
