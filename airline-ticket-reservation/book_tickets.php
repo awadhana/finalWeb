@@ -88,14 +88,14 @@
 				<tr>
 					<td class="fix_table"><input type="date" name="dep_date" min=
 						<?php 
-							$todays_date=date('m-d-Y'); 
+							$todays_date=date('Y-m-d'); 
 							echo $todays_date;
 						?> 
 						max=
 						<?php 
-							$max_date=date_create(date('m-d-Y'));
+							$max_date=date_create(date('Y-m-d'));
 							date_add($max_date,date_interval_create_from_date_string("90 days")); 
-							echo date_format($max_date,"m-d-Y");
+							echo date_format($max_date,"Y-m-d");
 						?> required></td>
 					<td class="fix_table"><input type="number" name="no_of_pass" placeholder="Eg. 5" required></td>
 				</tr>
