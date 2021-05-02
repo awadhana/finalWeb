@@ -28,11 +28,11 @@ DELIMITER $$
 --
 CREATE DEFINER=`Harry`@`localhost` PROCEDURE `GetFlightStatistics` (IN `j_date` DATE)  BEGIN
  select flight_no,departure_date,IFNULL(no_of_passengers, 0) as no_of_passengers,total_capacity from (
-select f.flight_no,f.departure_date,sum(t.no_of_passengers) as no_of_passengers,j.total_capacity 
-from flight_details f left join ticket_details t 
-on t.booking_status='CONFIRMED' 
-and t.flight_no=f.flight_no 
-and f.departure_date=t.journey_date 
+select f.flight_no,f.departure_date,sum(t.no_of_passengers) as no_of_passengers,j.total_capacity
+from flight_details f left join ticket_details t
+on t.booking_status='CONFIRMED'
+and t.flight_no=f.flight_no
+and f.departure_date=t.journey_date
 inner join jet_details j on j.jet_id=f.jet_id
 group by flight_no,journey_date) k where departure_date=j_date;
  END$$
@@ -130,12 +130,17 @@ CREATE TABLE `flight_details` (
 --
 
 INSERT INTO `flight_details` (`flight_no`, `from_city`, `to_city`, `departure_date`, `arrival_date`, `departure_time`, `arrival_time`, `seats_economy`, `seats_business`, `price_economy`, `price_business`, `jet_id`) VALUES
-('AA101', 'bangalore', 'mumbai', '2017-12-01', '2017-12-02', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
-('AA102', 'bangalore', 'mumbai', '2017-12-01', '2017-12-01', '10:00:00', '12:00:00', 200, 73, 2500, 3000, '10002'),
-('AA103', 'bangalore', 'chennai', '2017-12-03', '2017-12-03', '17:00:00', '17:45:00', 150, 75, 1200, 1500, '10004'),
-('AA104', 'bangalore', 'mysore', '2017-12-04', '2017-12-04', '09:00:00', '09:17:00', 37, 4, 500, 750, '10003'),
-('AA106', 'bangalore', 'hyderabad', '2017-12-01', '2017-12-01', '13:00:00', '14:00:00', 150, 75, 3000, 3750, '10004');
-
+('AA196', 'Atlanta', 'New York City', '2021-05-01', '2021-05-10', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA197', 'Atlanta', 'New Jersey', '2021-05-04', '2021-05-18', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA198', 'Atlanta', 'Boston', '2021-05-06', '2021-06-22', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA099', 'Atlanta', 'Long Island', '2021-06-01', '2021-06-10', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA100', 'Atlanta', 'Austin', '2021-06-04', '2021-06-14', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA101', 'Atlanta', 'San Francisco', '2021-06-10', '2021-06-20', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA102', 'Atlanta', 'Cancun', '2021-06-01', '2021-06-01', '10:00:00', '12:00:00', 200, 73, 2500, 3000, '10002'),
+('AA103', 'Atlanta', 'Los Angeles', '2021-06-03', '2021-06-03', '17:00:00', '17:45:00', 150, 75, 1200, 1500, '10004'),
+('AA104', 'Atlanta', 'Houston', '2021-07-04', '2021-07-04', '09:00:00', '09:17:00', 37, 4, 500, 750, '10003'),
+('AA105', 'Atlanta', 'Washington DC', '2021-07-10', '2021-07-10', '09:00:00', '10:20:00', 37, 4, 500, 750, '10003'),
+('AA106', 'Atlanta', 'Washington', '2021-07-01', '2021-07-01', '13:00:00', '14:00:00', 150, 75, 3000, 3750, '10004');
 -- --------------------------------------------------------
 
 --
@@ -243,14 +248,15 @@ CREATE TABLE `payment_details` (
 --
 
 INSERT INTO `payment_details` (`payment_id`, `pnr`, `payment_date`, `payment_amount`, `payment_mode`) VALUES
-('120000248', '4797983', '2017-11-25', 4200, 'credit card'),
-('142539461', '3773951', '2017-11-25', 4050, 'credit card'),
-('165125569', '8503285', '2017-11-25', 7500, 'net banking'),
-('467972527', '2369143', '2017-11-26', 33400, 'debit card'),
-('557778944', '6980157', '2017-11-26', 11700, 'credit card'),
-('620041544', '1669050', '2017-11-25', 4800, 'debit card'),
-('665360715', '5421865', '2017-11-28', 15750, 'net banking'),
-('862686553', '3027167', '2017-11-25', 10700, 'debit card');
+('120000248', '4797983', '2021-05-05', 4200, 'credit card'),
+('142539461', '3773951', '2021-05-05', 4050, 'credit card'),
+('165125569', '8503285', '2021-05-05', 7500, 'net banking'),
+('467972527', '2369143', '2021-06-04', 33400, 'debit card'),
+('557778944', '6980157', '2021-06-10', 11700, 'credit card'),
+('620041544', '1669050', '2021-07-04', 4800, 'debit card'),
+('665360715', '5421865', '2021-07-04', 15750, 'net banking'),
+('862686553', '3027167', '2021-07-04', 10700, 'debit card');
+
 
 --
 -- Triggers `payment_details`
@@ -288,15 +294,14 @@ CREATE TABLE `ticket_details` (
 --
 
 INSERT INTO `ticket_details` (`pnr`, `date_of_reservation`, `flight_no`, `journey_date`, `class`, `booking_status`, `no_of_passengers`, `lounge_access`, `priority_checkin`, `insurance`, `payment_id`, `customer_id`) VALUES
-('1669050', '2017-11-25', 'AA104', '2017-12-04', 'business', 'CONFIRMED', 3, 'yes', 'yes', 'yes', '620041544', 'harryroshan'),
-('2369143', '2017-11-26', 'AA101', '2017-12-01', 'business', 'CONFIRMED', 4, 'yes', 'yes', 'yes', '467972527', 'blah'),
-('3027167', '2017-11-25', 'AA101', '2017-12-01', 'economy', 'CONFIRMED', 2, 'no', 'no', 'yes', '862686553', 'aadith'),
-('3773951', '2017-11-25', 'AA104', '2017-12-04', 'economy', 'CONFIRMED', 3, 'yes', 'yes', 'yes', '142539461', 'aadith'),
-('4797983', '2017-11-25', 'AA104', '2017-12-04', 'business', 'CONFIRMED', 3, 'yes', 'no', 'yes', '120000248', 'harryroshan'),
-('5421865', '2017-11-28', 'AA101', '2017-12-01', 'economy', 'CONFIRMED', 3, 'no', 'no', 'no', '665360715', 'harryroshan'),
-('6980157', '2017-11-26', 'AA101', '2017-12-01', 'economy', 'CANCELED', 2, 'yes', 'yes', 'yes', '557778944', 'aadith'),
-('8503285', '2017-11-25', 'AA102', '2017-12-01', 'business', 'CONFIRMED', 2, 'yes', 'yes', 'no', '165125569', 'aadith');
-
+('1669050', '2021-05-05', 'AA104', '2021-05-10', 'business', 'CONFIRMED', 3, 'yes', 'yes', 'yes', '620041544', 'harryroshan'),
+('2369143', '2021-05-06', 'AA101', '2021-05-05', 'business', 'CONFIRMED', 4, 'yes', 'yes', 'yes', '467972527', 'blah'),
+('3027167', '2021-05-05', 'AA101', '2021-05-10', 'economy', 'CONFIRMED', 2, 'no', 'no', 'yes', '862686553', 'aadith'),
+('3773951', '2021-06-05', 'AA104', '2021-07-04', 'economy', 'CONFIRMED', 3, 'yes', 'yes', 'yes', '142539461', 'aadith'),
+('4797983', '2021-06-05', 'AA104', '2021-07-04', 'business', 'CONFIRMED', 3, 'yes', 'no', 'yes', '120000248', 'harryroshan'),
+('5421865', '2021-07-01', 'AA101', '2021-08-01', 'economy', 'CONFIRMED', 3, 'no', 'no', 'no', '665360715', 'harryroshan'),
+('6980157', '2021-07-02', 'AA101', '2021-08-02', 'economy', 'CANCELED', 2, 'yes', 'yes', 'yes', '557778944', 'aadith'),
+('8503285', '2021-07-02', 'AA102', '2021-08-03', 'business', 'CONFIRMED', 2, 'yes', 'yes', 'no', '165125569', 'aadith');
 --
 -- Indexes for dumped tables
 --
