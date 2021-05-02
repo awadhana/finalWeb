@@ -86,16 +86,22 @@
         						</tr>";
     						}
     						echo "</table> <br>";
+    						?>
+							<table cellpadding="5">
+				<tr>
+					<td class="fix_table">Enter the No. of Days</td>
+				</tr>
+				<tr>
+					<td class="fix_table"><input type="number" name="no_of_days" placeholder="Eg. 2" required></td>
+				</tr>
+			</table>
+ 							<?php
+
     						echo "<input type=\"submit\" value=\"Select Spot\" name=\"Select\">";
     						echo "</form>";
     					//}
 					//mysqli_stmt_close($stmt);
 					mysqli_close($dbc);
-					// else
-					// {
-					// 	echo "Submit Error";
-					// 	echo mysqli_error();
-					// }
 		?>
 	</body>
 </html>
