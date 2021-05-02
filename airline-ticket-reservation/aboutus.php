@@ -78,7 +78,7 @@
       <p><b>John Arthur</b>- Front end enginner. Worked on log in page, authentification system and front-end <br>
       design alongside Suzanne and Kevin.</p>
 
-      <p><b> Description: </b>Conway's Game of Life with extensive functionality.</p>
+      <p><b> Description: </b>.</p>
 
       <p> <b>Methodology:</b> We used the Agile Scrum framework. Thanks to it's flexible design and <br>
       the ease in implementation with continuous reiteration and reevealuation of priorities, the <br>
