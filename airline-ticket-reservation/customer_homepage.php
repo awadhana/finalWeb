@@ -79,6 +79,10 @@
 				<td class="admin_func"><a href="cancel_booked_tickets.php"><i class="fa fa-plane" aria-hidden="true"></i> Cancel Booked Flight Tickets</a>
 				</td>
 			</tr>
+			<tr>
+				<td class="admin_func"><a href="book_parking.php"><i class="fa fa-plane" aria-hidden="true"></i> Book Parking</a>
+				</td>
+			</tr>
 		</table>
 		<!--Following data fields were empty!
 			...

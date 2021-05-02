@@ -58,23 +58,17 @@
 					<td class="fix_table">
 						<input list="origins" name="origin" placeholder="From" required>
   						<datalist id="origins">
-  						  	<option value="Atlanta">
+  						  	<option value="bangalore">
   						</datalist>
 						<!-- <input type="text" name="origin" placeholder="From" required> --></td>
 					<td class="fix_table">
 						<input list="destinations" name="destination" placeholder="To" required>
   						<datalist id="destinations">
-  						  	<option value="New York City">
-  						  	<option value="New Jersey">
-  						  	<option value="Boston">
-  						  	<option value="Long Island">
-  						  	<option value="Austin">
-							<option value="San Francisco">
-							<option value="Cancun">
-							<option value="Los Angeles">
-							<option value="Houston">
-							<option value="Washington DC">
-							<option value="Washington">
+  						  	<option value="mumbai">
+  						  	<option value="mysore">
+  						  	<option value="mangalore">
+  						  	<option value="chennai">
+  						  	<option value="hyderabad">
   						</datalist>
 						<!-- <input type="text" name="destination" placeholder="To" required> --></td>
 				</tr>
@@ -117,5 +111,9 @@
 			<br>
 			<input type="submit" value="Search for Available Flights" name="Search">
 		</form>
+		<!--Following data fields were empty!
+			...
+			ADD VIEW FLIGHT DETAILS AND VIEW JETS/ASSETS DETAILS for ADMIN
+		-->
 	</body>
 </html>
