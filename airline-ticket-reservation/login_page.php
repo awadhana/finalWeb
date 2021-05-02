@@ -34,7 +34,7 @@
 			border-radius: 10px;
 		}
 		legend{
-			margin-left:3%;
+			margin-left:1%;
 			padding:5px 10px;
 			background-color:gray;
 			border:1px solid;
