@@ -1,7 +1,15 @@
 <html>
 	<head>
 		<title>Login Handler</title>
-	</head>
+
+	<style>
+	body{
+				background-image: url('slide1.jpeg');
+				text-align:center;
+			}
+			</style>
+		</head>
+	
 	<body>
 		<?php
 			session_start();

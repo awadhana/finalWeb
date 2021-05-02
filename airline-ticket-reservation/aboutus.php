@@ -9,6 +9,9 @@
 		<link rel="stylesheet" type="text/css" href="main.css"/>
 		<link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
 		<style>
+			a{
+			font-size:25px;
+		}
 			body{
 				background-image: url('slide1.jpeg');
 			}
@@ -24,23 +27,8 @@
 		<div>
 			<ul >
 				<li><a href="home_page.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-				<li>
-					<?php
-						if(isset($_SESSION['login_user'])&&$_SESSION['user_type']=='Customer')
-						{
-							echo "<a href=\"book_tickets.php\"><i class=\"fa fa-ticket\" aria-hidden=\"true\"></i> Book Tickets</a>";
-						}
-						else if(isset($_SESSION['login_user'])&&$_SESSION['user_type']=='Administrator')
-						{
-							echo "<a href=\"admin_ticket_message.php\"><i class=\"fa fa-ticket\" aria-hidden=\"true\"></i> Book Tickets</a>";
-						}
-						else
-						{
-							echo "<a href=\"login_page.php\"><i class=\"fa fa-ticket\" aria-hidden=\"true\"></i> Book Tickets</a>";
-						}
-					?>
-				</li>
-				<li><a href="aboutus.php"><i class="fa fa-plane" aria-hidden="true"></i> About Us</a></li>
+				<li><a href="login_page.php"><i class="fa fa-plane" aria-hidden="true"></i> Book A Flight</a></li>
+				<li><a href="login_page.php"><i class="fa fa-car" aria-hidden="true"></i> Reserve A Parking Spot</a></li>
 				<li>
 					<?php
 						if(isset($_SESSION['login_user'])&&$_SESSION['user_type']=='Customer')
@@ -57,6 +45,7 @@
 						}
 					?>
 				</li>
+				<li><a href="aboutus.php"><i class="fa fa-address-book" aria-hidden="true"></i> About Us</a></li>
 			</ul>
 			</li>
 			<ul>
@@ -78,7 +67,7 @@
       <p><b>John Arthur</b>- Front end enginner. Worked on log in page, authentification system and front-end <br>
       design alongside Suzanne and Kevin.</p>
 
-      <p><b> Description: </b>.</p>
+      <p><b> Description: </b>Conway's Game of Life with extensive functionality.</p>
 
       <p> <b>Methodology:</b> We used the Agile Scrum framework. Thanks to it's flexible design and <br>
       the ease in implementation with continuous reiteration and reevealuation of priorities, the <br>

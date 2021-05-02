@@ -25,12 +25,10 @@
 .fling-minislide img:nth-child(1){animation-delay:15s;}
 .button{
 	position:relative;
-
     display:inline-flex;
 	align-items:center;
-   
     text-transform: uppercase;
-	margin: 0px, 60px;
+	margin: 0px 60px;
 	padding:10px;
 	margin-bottom:15px;
 	background-color:#030337;
@@ -84,6 +82,7 @@ a {
 	color:transparent;
 	text-decoration: none;
 	padding-left: 20px;
+
 }
 a:hover{
 	background-color: white;

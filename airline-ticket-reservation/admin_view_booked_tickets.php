@@ -7,6 +7,9 @@
 			View Booked Tickets
 		</title>
 		<style>
+			a{
+			font-size:25px;
+		}
 		body{
 				background-image: url('slide1.jpeg');
 				text-align:center;

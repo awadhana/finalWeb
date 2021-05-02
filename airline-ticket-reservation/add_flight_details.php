@@ -7,6 +7,9 @@
 			Add Flight Schedule Details
 		</title>
 		<style>
+			a{
+			font-size:25px;
+		}
 				body{
 				background-image: url('slide1.jpeg');
 				text-align:center;
@@ -139,11 +142,11 @@
 			<hr>
 			<table cellpadding="5">
 				<tr>
-				<!--			<td class="fix_table">Jet ID</td>
+						<td class="fix_table">Jet ID</td>
 				</tr>
 				<tr>
 					<td class="fix_table">
-				<input type="text" name="jet_id" required> -->
+				<input type="text" name="jet_id" required> 
 					</td>
 				</tr>
 			</table>

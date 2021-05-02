@@ -106,10 +106,10 @@
 				</tr>
 			</table>
 			<br>
-			<input type="button" value="Submit"  name="Submit" class = "button">
+			<input type="submit" value="Submit"  name="Submit" class = "button">
 			<br>
 			<br>
 			</fieldset>
 		</form>
 	</body>
-		</html>
+</html>
