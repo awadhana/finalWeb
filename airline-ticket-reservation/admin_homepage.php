@@ -4,16 +4,30 @@
 <html>
 	<head>
 		<title>
-			Welcome Administrator
+			Welcome JKASH Airlines Administrator
 		</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="main.css"/>
 		<link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
+		<style>
+			body{
+				background-image: url('slide1.jpeg');
+			}
+			*{
+				text-align:center;
+				color:black;
+			}
+			a{
+		
+				color:black;
+			}
+			table,td, tr{
+				margin:auto;
+			}
+		</style>
 	</head>
+	
 	<body>
-		<img class="logo" src="images/shutterstock_22.jpg"/> 
-		<h1 id="title">
-			AADITH AIRLINES
-		</h1>
+	
 		<div>
 			<ul>
 				<li><a href="admin_homepage.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
@@ -23,7 +37,7 @@
 		</div>
 		<h2>Welcome Administrator!</h2>
 		<table cellpadding="5">
-			
+		
 			<tr>
 				<td class="admin_func"><a href="admin_view_booked_tickets.php"><i class="fa fa-plane" aria-hidden="true"></i> View List of Booked Tickets for a Flight</a>
 				</td>
@@ -53,5 +67,6 @@
 				</td>
 			</tr>
 		</table>
+
 	</body>
 </html>
