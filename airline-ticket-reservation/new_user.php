@@ -12,6 +12,7 @@
     			border: 1.5px solid #030337;
     			border-radius: 10px;
     			padding: 10px;
+				
 			}
 			input[type=submit] {
 				background-color: #030337;
@@ -20,20 +21,21 @@
     			padding: 10px;
     			margin: 0px 60px
 			}
-			form{
+			fieldset{
 				background-color:gray;
 				width:45%;
-				margin-left:25%
+				margin-left:30%;
+				border-radius:10px;
 			}
-			legend{
-			margin-left:3%;
+				legend{
+			margin-left:1%;
 			padding:5px 10px;
 			background-color:gray;
 			border:1px solid;
 			color:white;
-			width:30%;
 			
 		}
+		
 		.button{
 			text-transform: uppercase;
 			color:white;
@@ -91,23 +93,23 @@
 			
 			<table cellpadding='10'>
 				<tr>
-					<td>Enter your name </td>
+					<td>Enter your name   </td>
 					<td><input type="text" name="name" required><br><br></td>
 				</tr>
 				<tr>
-					<td>Enter your phone #</td>
+					<td>Enter your phone number</td>
 					<td><input type="text" name="phone_no" required><br><br></td>
 				</tr>
 				<tr>
-					<td>Enter your address</td>
+					<td>Enter your mailing address</td>
 					<td><input type="text" name="address" required><br><br></td>
 				</tr>
 			</table>
 			<br>
-			<input type="submit" value="Submit"  name="Submit" class = "button">
+			<input type="button" value="Submit"  name="Submit" class = "button">
 			<br>
 			<br>
 			</fieldset>
 		</form>
 	</body>
-</html>
+</html
