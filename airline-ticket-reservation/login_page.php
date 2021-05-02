@@ -95,7 +95,7 @@
 						<br><br>";
 					}
 				?>
-				<input type="button" name="Login" value="Login" class ="button">
+				<input type="submit" name="Login" value="Login" class ="button">
 				<a href="new_user.php" class="button" >Don't have an account?</a>
 			</fieldset>
 			<br>
