@@ -77,7 +77,7 @@
 					<li><a href="login_page.php"><i class="fa fa-car" aria-hidden="true"></i> Reserve A Parking Spot</a></li>
 				
 				<li><a href="login_page.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
-				<li><a href="home_page.php"><i class="fa fa-address-book" aria-hidden="true"></i> About Us</a></li>
+				<li><a href="aboutus.php"><i class="fa fa-address-book" aria-hidden="true"></i> About Us</a></li>
 			</ul>
 			</li>
 			</ul>
