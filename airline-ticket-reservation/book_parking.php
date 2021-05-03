@@ -56,7 +56,7 @@
 
 					require_once('Database Connection file/mysqli_connect.php');
 					
-						$query="SELECT spot_no,type,price,available FROM parking_details";
+						$query="SELECT spot_no,type,price,available FROM parking_details where available = 1";
 						
 						$result = mysqli_query($dbc, $query);
 

@@ -85,7 +85,7 @@
 				echo "</table>";
 				echo "<hr style='margin-right:900px; margin-left: 50px'>";
 				echo "<br>";
-				echo "<p style=\"margin-left:50px\">Your Payment/Transaction ID is <strong>".$payment_id.".</strong> Please note it down for future reference.</p>";
+				echo "<p style=\"margin-left:50px\">Your ticket number is <strong>".$payment_id.".</strong> Please note it down to show booth operator.</p>";
 				echo "<br>";
 			?>
 			<table cellpadding="5" style='margin-left: 50px'>
