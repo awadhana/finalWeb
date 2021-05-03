@@ -20,7 +20,7 @@
 
 <div class = "container">
 		<div class="fling-minislide">
-  <img src="slide4.jpg" alt="Slide 4" />
+  <img src="slide5.jpg" alt="Slide 4" />
   <img src="slide3.jpg" alt="Slide 3" />
   <img src="slide2.jpg" alt="Slide 2" />
   <img src="slide1.jpeg" alt="Slide 1" />
