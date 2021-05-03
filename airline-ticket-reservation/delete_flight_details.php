@@ -82,7 +82,7 @@
 			</table>
 			<br>
 			<br>
-			<input type="submit" value="DELETE" name="Delete">
+			<input type="submit" value="DELETE" name="DELETE">
 			</div>
 		</form>
 	</body>

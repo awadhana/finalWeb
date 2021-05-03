@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<?php
-			if(isset($_POST['Delete']))
+			if(isset($_POST['DELETE']))
 			{
 				$data_missing=array();
 				if(empty($_POST['flight_no']))
@@ -52,7 +52,7 @@
 					else
 					{
 						echo "Submit Error";
-						echo mysqli_error();
+						echo mysqli_error($conn);
 						header("location: delete_flight_details.php?msg=failed");
 					}
 				}
