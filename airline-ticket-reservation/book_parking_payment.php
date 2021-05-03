@@ -80,7 +80,7 @@
 				echo "<table cellpadding=\"5\"	style='margin-left: 50px'>";
 				echo "<tr>";
 				echo "<td class=\"fix_table\">Parking Fee:</td>";
-				echo "<td class=\"fix_table\">&#x20b9; ".$total_ticket_price."</td>";
+				echo "<td class=\"fix_table\">&#x24; ".$total_ticket_price."</td>";
 				echo "</tr>";
 
 				echo "</table>";
@@ -89,7 +89,7 @@
 				echo "<table cellpadding=\"5\" style='margin-left: 50px'>";
 				echo "<tr>";
 				echo "<td class=\"fix_table\"><strong>Total:</strong></td>";
-				echo "<td class=\"fix_table\">&#x20b9; ".$total_amount."</td>";
+				echo "<td class=\"fix_table\">&#x24; ".$total_amount."</td>";
 				echo "</tr>";
 				echo "</table>";
 				echo "<hr style='margin-right:900px; margin-left: 50px'>";
