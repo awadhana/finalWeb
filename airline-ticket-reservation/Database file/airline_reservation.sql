@@ -101,23 +101,44 @@ CREATE TABLE `parking_details` (
   `available` int(5) DEFAULT NULL,
   `price` int(5) DEFAULT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
+CREATE TABLE `flight_details` (
+  `flight_no` varchar(10) NOT NULL,
+  `from_city` varchar(20) DEFAULT NULL,
+  `to_city` varchar(20) DEFAULT NULL,
+  `departure_date` date NOT NULL,
+  `arrival_date` date DEFAULT NULL,
+  `departure_time` time DEFAULT NULL,
+  `arrival_time` time DEFAULT NULL,
+  `seats_economy` int(5) DEFAULT NULL,
+  `seats_business` int(5) DEFAULT NULL,
+  `price_economy` int(10) DEFAULT NULL,
+  `price_business` int(10) DEFAULT NULL,
+  `jet_id` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --
 -- Dumping data for table `parking_details`
 --
-
+INSERT INTO `flight_details` (`flight_no`, `from_city`, `to_city`, `departure_date`, `arrival_date`, `departure_time`, `arrival_time`, `seats_economy`, `seats_business`, `price_economy`, `price_business`, `jet_id`) VALUES
+('AA196', 'Atlanta', 'New York City', '2021-05-01', '2021-05-10', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA197', 'Atlanta', 'New Jersey', '2021-05-04', '2021-05-18', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA198', 'Atlanta', 'Boston', '2021-05-06', '2021-06-22', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA099', 'Atlanta', 'Long Island', '2021-06-01', '2021-06-10', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA100', 'Atlanta', 'Austin', '2021-06-04', '2021-06-14', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA101', 'Atlanta', 'San Francisco', '2021-06-10', '2021-06-20', '21:00:00', '01:00:00', 195, 96, 5000, 7500, '10001'),
+('AA102', 'Atlanta', 'Cancun', '2021-06-01', '2021-06-01', '10:00:00', '12:00:00', 200, 73, 2500, 3000, '10002'),
+('AA103', 'Atlanta', 'Los Angeles', '2021-06-03', '2021-06-03', '17:00:00', '17:45:00', 150, 75, 1200, 1500, '10004'),
+('AA104', 'Atlanta', 'Houston', '2021-07-04', '2021-07-04', '09:00:00', '09:17:00', 37, 4, 500, 750, '10003'),
+('AA105', 'Atlanta', 'Washington DC', '2021-07-10', '2021-07-10', '09:00:00', '10:20:00', 37, 4, 500, 750, '10003'),
+('AA106', 'Atlanta', 'Washington', '2021-07-01', '2021-07-01', '13:00:00', '14:00:00', 150, 75, 3000, 3750, '10004');
 INSERT INTO `parking_details` (`type`,`spot_no`, `available`, 'price`) VALUES
 ('VIP', 'PA101', 1, 75, '10001'),
 ('VIP', 'PA102', 1, 75, '10002'),
 ('REGULAR', 'PA103', 1, 40, '10004'),
 ('REGULAR', 'PA104', 1, 40, '10003'),
 ('REGULAR','PA106', 1, 40, '10004');
-
-
 --
 -- Table structure for table `payment_details`
 --
-
 CREATE TABLE `payment_details` (
   `payment_id` varchar(20) NOT NULL,
   `pnr` varchar(15) DEFAULT NULL,
@@ -125,19 +146,18 @@ CREATE TABLE `payment_details` (
   `payment_amount` int(6) DEFAULT NULL,
   `payment_mode` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 --
 -- Dumping data for table `payment_details`
 --
-
 INSERT INTO `payment_details` (`payment_id`, `pnr`, `payment_date`, `payment_amount`, `payment_mode`) VALUES
-('120000248', '4797983', '2017-11-25', 4200, 'credit card'),
-('142539461', '3773951', '2017-11-25', 4050, 'credit card'),
-('467972527', '2369143', '2017-11-26', 33400, 'debit card'),
-('557778944', '6980157', '2017-11-26', 11700, 'credit card'),
-('620041544', '1669050', '2017-11-25', 4800, 'debit card'),
-('862686553', '3027167', '2017-11-25', 10700, 'debit card');
-
+('120000248', '4797983', '2021-05-05', 4200, 'credit card'),
+('142539461', '3773951', '2021-05-05', 4050, 'credit card'),
+('165125569', '8503285', '2021-05-05', 7500, 'net banking'),
+('467972527', '2369143', '2021-06-04', 33400, 'debit card'),
+('557778944', '6980157', '2021-06-10', 11700, 'credit card'),
+('620041544', '1669050', '2021-07-04', 4800, 'debit card'),
+('665360715', '5421865', '2021-07-04', 15750, 'net banking'),
+('862686553', '3027167', '2021-07-04', 10700, 'debit card');
 --
 -- Triggers `payment_details`
 --
@@ -147,13 +167,10 @@ CREATE TRIGGER `update_ticket_after_payment` AFTER INSERT ON `payment_details` F
    WHERE pnr = NEW.pnr
 $$
 DELIMITER ;
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `ticket_details`
 --
-
 CREATE TABLE `ticket_details` (
   `pnr` varchar(15) NOT NULL,
   `date_of_reservation` date DEFAULT NULL,
@@ -168,52 +185,43 @@ CREATE TABLE `ticket_details` (
   `payment_id` varchar(20) DEFAULT NULL,
   `customer_id` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 --
 -- Dumping data for table `ticket_details`
 --
-
-INSERT INTO `ticket_details` (`pnr`, `date_of_reservation`, `spot_no`, `journey_date`, `class`, `booking_status`, `no_of_passengers`, `lounge_access`, `priority_checkin`, `insurance`, `payment_id`, `customer_id`) VALUES
-('1669050', '2017-11-25', 'AA104', '2017-12-04', 'business', 'CONFIRMED', 3, 'yes', 'yes', 'yes', '620041544', 'harryroshan'),
-('2369143', '2017-11-26', 'AA101', '2017-12-01', 'business', 'CONFIRMED', 4, 'yes', 'yes', 'yes', '467972527', 'blah'),
-('3027167', '2017-11-25', 'AA101', '2017-12-01', 'economy', 'CONFIRMED', 2, 'no', 'no', 'yes', '862686553', 'aadith'),
-('3773951', '2017-11-25', 'AA104', '2017-12-04', 'economy', 'CONFIRMED', 3, 'yes', 'yes', 'yes', '142539461', 'aadith'),
-('4797983', '2017-11-25', 'AA104', '2017-12-04', 'business', 'CONFIRMED', 3, 'yes', 'no', 'yes', '120000248', 'harryroshan'),
-('5421865', '2017-11-28', 'AA101', '2017-12-01', 'economy', 'CONFIRMED', 3, 'no', 'no', 'no', '665360715', 'harryroshan'),
-('6980157', '2017-11-26', 'AA101', '2017-12-01', 'economy', 'CANCELED', 2, 'yes', 'yes', 'yes', '557778944', 'aadith'),
-('8503285', '2017-11-25', 'AA102', '2017-12-01', 'business', 'CONFIRMED', 2, 'yes', 'yes', 'no', '165125569', 'aadith');
-
+INSERT INTO `ticket_details` (`pnr`, `date_of_reservation`, `flight_no`, `journey_date`, `class`, `booking_status`, `no_of_passengers`, `lounge_access`, `priority_checkin`, `insurance`, `payment_id`, `customer_id`) VALUES
+('1669050', '2021-05-05', 'AA104', '2021-05-10', 'business', 'CONFIRMED', 3, 'yes', 'yes', 'yes', '620041544', 'harryroshan'),
+('2369143', '2021-05-06', 'AA101', '2021-05-05', 'business', 'CONFIRMED', 4, 'yes', 'yes', 'yes', '467972527', 'blah'),
+('3027167', '2021-05-05', 'AA101', '2021-05-10', 'economy', 'CONFIRMED', 2, 'no', 'no', 'yes', '862686553', 'aadith'),
+('3773951', '2021-06-05', 'AA104', '2021-07-04', 'economy', 'CONFIRMED', 3, 'yes', 'yes', 'yes', '142539461', 'aadith'),
+('4797983', '2021-06-05', 'AA104', '2021-07-04', 'business', 'CONFIRMED', 3, 'yes', 'no', 'yes', '120000248', 'harryroshan'),
+('5421865', '2021-07-01', 'AA101', '2021-08-01', 'economy', 'CONFIRMED', 3, 'no', 'no', 'no', '665360715', 'harryroshan'),
+('6980157', '2021-07-02', 'AA101', '2021-08-02', 'economy', 'CANCELED', 2, 'yes', 'yes', 'yes', '557778944', 'aadith'),
+('8503285', '2021-07-02', 'AA102', '2021-08-03', 'business', 'CONFIRMED', 2, 'yes', 'yes', 'no', '165125569', 'aadith');
 --
 -- Indexes for dumped tables
 --
-
 --
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
-
 --
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`customer_id`);
-
 --
 -- Indexes for table `flight_details`
 --
 ALTER TABLE `flight_details`
   ADD PRIMARY KEY (`flight_no`,`departure_date`),
   ADD KEY `jet_id` (`jet_id`);
-
-
 --
 -- Indexes for table `payment_details`
 --
 ALTER TABLE `payment_details`
   ADD PRIMARY KEY (`payment_id`),
   ADD KEY `pnr` (`pnr`);
-
 --
 -- Indexes for table `ticket_details`
 --
@@ -223,16 +231,13 @@ ALTER TABLE `ticket_details`
   ADD KEY `journey_date` (`journey_date`),
   ADD KEY `flight_no` (`flight_no`),
   ADD KEY `flight_no_2` (`flight_no`,`journey_date`);
-
 --
 -- Constraints for dumped tables
 --
-
 -- Constraints for table `payment_details`
 --
 ALTER TABLE `payment_details`
   ADD CONSTRAINT `payment_details_ibfk_1` FOREIGN KEY (`pnr`) REFERENCES `parking_details` (`pnr`) ON UPDATE CASCADE;
-
 --
 -- Constraints for table `ticket_details`
 --
@@ -240,7 +245,6 @@ ALTER TABLE `parking_details`
   ADD CONSTRAINT `parking_details_ibfk_2` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `parking_details_ibfk_3` FOREIGN KEY (`flight_no`,`journey_date`) REFERENCES `flight_details` (`flight_no`, `departure_date`) ON DELETE SET NULL ON UPDATE CASCADE;
 COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
