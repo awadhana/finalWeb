@@ -6,7 +6,18 @@
 		<title>
 			Enter Payment Details
 		</title>
+			<link rel="stylesheet" type="text/css" href="main.css"/>
+		<link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
 		<style>
+		body{
+			background-image:url('slide3.jpg');
+		}
+		*{
+			text-align:center;
+		}
+		a{
+			font-size:25px;
+		}
 			input {
 				display: block;
     			border: 1.5px solid #030337;
@@ -27,27 +38,24 @@
 			select{
 				display: block;
 			}
+			table,tr,td{
+				margin:auto;
+			}
 		</style>
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
 	</head>
 	<body>
-		<img class="logo" src="images/shutterstock_22.jpg"/>
-		<h1 id="title">
-			AADITH AIRLINES
-		</h1>
 		<div>
 			<ul>
 				<li><a href="home_page.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
 				<li><a href="customer_homepage.php"><i class="fa fa-desktop" aria-hidden="true"></i> Dashboard</a></li>
-				<li><a href="home_page.php"><i class="fa fa-plane" aria-hidden="true"></i> About Us</a></li>
-				<li><a href="home_page.php"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</a></li>
 				<li><a href="logout_handler.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
 			</ul>
 		</div>
+		<h3> WE ACCEPT: </h3>
+		<img src="creditcard.jpg" style="width:400px;height:60px;">
 		<form action="payment_details_form_handler.php" method="post">
 			<h2>ENTER THE PAYMENT DETAILS</h2>
-			<h3 style="margin-left: 30px"><u>Payment Summary</u></h3>
+			<h3 style="margin-left: 30px"><u>PAYMENT SUMMARY</u></h3>
 			<?php
 				$flight_no=$_SESSION['flight_no'];
 				$journey_date=$_SESSION['journey_date'];
@@ -111,12 +119,12 @@
 				$total_amount=$total_ticket_price;
 				$_SESSION['total_amount']=$total_amount;
 
-				echo "<table cellpadding=\"5\"	style='margin-left: 50px'>";
+				echo "<table cellpadding=\"5\"	style='margin: auto'>";
 				echo "<tr>";
 				echo "<td class=\"fix_table\">Base Fare, Fuel and Transaction Charges (Fees & Taxes included):</td>";
 				echo "<td class=\"fix_table\">&#x24; ".$total_ticket_price."</td>";
 				echo "</tr>";
-
+			
 				// echo "<tr>";
 				// echo "<td class=\"fix_table\">Meal Combo Charges:</td>";
 				// echo "<td class=\"fix_table\">&#x20b9; ".$total_meal_price."</td>";
@@ -144,21 +152,21 @@
 
 				echo "</table>";
 
-				echo "<hr style='margin-right:900px; margin-left: 50px'>";
-				echo "<table cellpadding=\"5\" style='margin-left: 50px'>";
+				echo "<hr style='margin:auto'>";
+				echo "<table cellpadding=\"5\" style='margin: auto'>";
 				echo "<tr>";
 				echo "<td class=\"fix_table\"><strong>Total:</strong></td>";
 				echo "<td class=\"fix_table\">&#x24; ".$total_amount."</td>";
 				echo "</tr>";
 				echo "</table>";
-				echo "<hr style='margin-right:900px; margin-left: 50px'>";
+				echo "<hr style='margin-right:900px; margin:auto'>";
 				echo "<br>";
 				echo "<p style=\"margin-left:50px\">Your Payment/Transaction ID is <strong>".$payment_id.".</strong> Please note it down for future reference.</p>";
 				echo "<br>";
 			?>
-			<table cellpadding="5" style='margin-left: 50px'>
+			<table cellpadding="5" style='margin: auto'>
 				<tr>
-					<td class="fix_table"><strong>Enter the Payment Mode:-</strong></td>
+					<td class="fix_table"><strong>ENTER THE PAYMENT MODE:</strong></td>
 				</tr>
 				<tr>
 					<td class="fix_table"><i class="fa fa-credit-card" aria-hidden="true"></i> Credit Card <input type="radio" name="payment_mode" value="credit card" checked></td>
@@ -168,7 +176,7 @@
 			</table>
 			<div class="payment_details">
 			<br>
-			<dl style="margin-left: 30px">
+			<dl style="margin:auto">
 
 				<table>
 				<!-- <div style="float:left;">
@@ -194,7 +202,7 @@
 				<tr>
 					<td>
 					<div style="float:left;">
-					<label for = "UName">Name</label>
+					<label for = "UName">Name on Card</label>
 					<input type="text" id="UName" name="u_name" required><br>
 	 				</div>
 
@@ -202,7 +210,7 @@
 
 				<td style="padding-left: 35px">
 				<div style="float:right">
-				<label for = "e_date">Expiration</label>
+				<label for = "e_date">Card Expiration</label>
 				<select name="month" id="ExpDateM" value = "MM" >
 	 			<option value="01">01</option>
 	 			<option value="02">02</option>
@@ -217,6 +225,7 @@
 				<option value="11">11</option>
 			 	<option value="12">12</option>
  </select>
+ <br>
 	<select name="Year" id="ExpDateY" value = "YY" >
 	 <option value="21">2021</option>
 	 <option value="02">2022</option>
@@ -263,14 +272,14 @@
 				</tr>
 
 			</table>
-		<div class="well">
+		<div class="well" >
 			Please, type some card number above.
 		</div>
+		<br>
 		<!-- <div class = "hidden">
 			<input type="text" id="cardType" name="card_type" value""><br>
-
 		</div> -->
-			<input type="submit" value="Pay Now" name="Pay_Now">
+			<input style='margin: auto'type="submit" value="PAY NOW" name="Pay_Now">
 		</form>
 
 	</div>
@@ -297,14 +306,5 @@
 		}
 	</script>
 
-		<!--
-•	Booking_Status
-•	Payment_ID -->
-
-		<!--Following data fields were empty!
-			...
-			ADD VIEW FLIGHT DETAILS AND VIEW JETS/ASSETS DETAILS for ADMIN
-			PREDEFINED LOCATION WHEN BOOKING TICKETS
-		-->
 	</body>
 </html>
