@@ -13,6 +13,9 @@
 				background-image: url('slide1.jpeg');
 				text-align:center;
 			}
+			a{
+				font-size:25px;
+			}
 			input {
     			border: 1.5px solid #030337;
     			border-radius: 4px;
@@ -120,7 +123,7 @@
 				</tr>
 			</table>
 			<br>
-			<input type="submit" value="Search for Available Flights" name="Search">
+			<input type="submit" value="SEARCH FOR AVAILABLE FLIGHTS" name="Search">
 		</form>
 	
 	</body>

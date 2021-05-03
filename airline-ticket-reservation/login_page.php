@@ -29,36 +29,38 @@
     			margin: 0px 60px
 			}
 		fieldset{
-			margin-left:105%;
-			text-align:center;
-			position:relative;
-			background-color:gray;
-			width:600px;
-			border-radius: 10px;
+				margin-left:105%;
+				text-align:center;
+				position:relative;
+				background-color:gray;
+				width:600px;
+				border-radius: 10px;
 		}
 		
 		legend{
-			margin-left:1%;
-			padding:5px 10px;
-			background-color:gray;
-			border:1px solid;
-			color:white;
-			
+				margin-left:1%;
+				padding:5px 10px;
+				background-color:gray;
+				border:1px solid;
+				color:white;
+				
 		}
 		.button, input.button{
-			text-transform: uppercase;
-			color:white;
-	margin: 0px, 60px;
-	padding:10px;
-	margin-bottom:15px;
-	background-color:#030337;
-	border-radius: 10px;
-			font-family:TimesNewRoman;
+				font-size:20px;
+				text-transform: uppercase;
+				color:white;
+				margin: 0px, 60px;
+				padding:10px;
+				margin-bottom:15px;
+				background-color:#030337;
+				border-radius: 10px;
+				font-family:TimesNewRoman;
+		
 		}
 		input.button:hover{
-	background-color: white;
-	color: #030337;
-}
+			background-color: white;
+			color: #030337;
+		}
 
 			
 		</style>

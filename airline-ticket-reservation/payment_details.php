@@ -6,7 +6,20 @@
 		<title>
 			Enter Payment Details
 		</title>
+			<link rel="stylesheet" type="text/css" href="main.css"/>
+		<link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
 		<style>
+		table,td,tr{
+			margin:auto;
+		}
+			a{
+			font-size:25px;
+		}
+		
+		body{
+				background-image: url('slide3.jpg');
+				text-align:center;
+				}
 			input {
     			border: 1.5px solid #030337;
     			border-radius: 4px;
@@ -20,20 +33,15 @@
     			margin: 0px 357px
 			}
 		</style>
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
+	
 	</head>
 	<body>
-		<img class="logo" src="images/shutterstock_22.jpg"/> 
-		<h1 id="title">
-			AADITH AIRLINES
-		</h1>
+		
 		<div>
 			<ul>
 				<li><a href="home_page.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
 				<li><a href="customer_homepage.php"><i class="fa fa-desktop" aria-hidden="true"></i> Dashboard</a></li>
-				<li><a href="home_page.php"><i class="fa fa-plane" aria-hidden="true"></i> About Us</a></li>
-				<li><a href="home_page.php"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</a></li>
+				<li><a href="home_page.php"><i class="fa fa-address-book" aria-hidden="true"></i> About Us</a></li>
 				<li><a href="logout_handler.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
 			</ul>
 		</div>
@@ -103,52 +111,52 @@
 				$total_amount=$total_ticket_price+$total_meal_price+$total_insurance_fee+$total_priority_checkin_fee+$total_lounge_access_fee+$total_discount;
 				$_SESSION['total_amount']=$total_amount;
 
-				echo "<table cellpadding=\"5\"	style='margin-left: 50px'>";
+				echo "<table cellpadding=\"5\"	style='margin:auto;'>";
 				echo "<tr>";
 				echo "<td class=\"fix_table\">Base Fare, Fuel and Transaction Charges (Fees & Taxes included):</td>";
-				echo "<td class=\"fix_table\">&#x20b9; ".$total_ticket_price."</td>";
+				echo "<td class=\"fix_table\">&#x24; ".$total_ticket_price."</td>";
 				echo "</tr>";
 
 				echo "<tr>";
 				echo "<td class=\"fix_table\">Meal Combo Charges:</td>";
-				echo "<td class=\"fix_table\">&#x20b9; ".$total_meal_price."</td>";
+				echo "<td class=\"fix_table\">&#x24; ".$total_meal_price."</td>";
 				echo "</tr>";
 
 				echo "<tr>";
 				echo "<td class=\"fix_table\">Priority Checkin Fees:</td>";
-				echo "<td class=\"fix_table\">&#x20b9; ".$total_priority_checkin_fee."</td>";
+				echo "<td class=\"fix_table\">&#x24; ".$total_priority_checkin_fee."</td>";
 				echo "</tr>";
 
 				echo "<tr>";
 				echo "<td class=\"fix_table\">Lounge Access Fees:</td>";
-				echo "<td class=\"fix_table\">&#x20b9; ".$total_lounge_access_fee."</td>";
+				echo "<td class=\"fix_table\">&#x24; ".$total_lounge_access_fee."</td>";
 				echo "</tr>";
 
 				echo "<tr>";
 				echo "<td class=\"fix_table\">Insurance Fees:</td>";
-				echo "<td class=\"fix_table\">&#x20b9; ".$total_insurance_fee."</td>";
+				echo "<td class=\"fix_table\">&#x24; ".$total_insurance_fee."</td>";
 				echo "</tr>";
 
 				echo "<tr>";
 				echo "<td class=\"fix_table\">Discount:</td>";
-				echo "<td class=\"fix_table\">&#x20b9; ".$total_discount."</td>";
+				echo "<td class=\"fix_table\">&#x24; ".$total_discount."</td>";
 				echo "</tr>";
 
 				echo "</table>";
 
-				echo "<hr style='margin-right:900px; margin-left: 50px'>";
-				echo "<table cellpadding=\"5\" style='margin-left: 50px'>";
+				echo "<hr style='margin: auto;'>";
+				echo "<table cellpadding=\"5\" style='margin: auto;'>";
 				echo "<tr>";
 				echo "<td class=\"fix_table\"><strong>Total:</strong></td>";
-				echo "<td class=\"fix_table\">&#x20b9; ".$total_amount."</td>";
+				echo "<td class=\"fix_table\">&#x24; ".$total_amount."</td>";
 				echo "</tr>";
 				echo "</table>";
-				echo "<hr style='margin-right:900px; margin-left: 50px'>";
+				echo "<hr style='margin: auto;'>";
 				echo "<br>";
 				echo "<p style=\"margin-left:50px\">Your Payment/Transaction ID is <strong>".$payment_id.".</strong> Please note it down for future reference.</p>";
 				echo "<br>";
 			?>
-			<table cellpadding="5" style='margin-left: 50px'>
+			<table cellpadding="5" style='margin: auto'>
 				<tr>
 					<td class="fix_table"><strong>Enter the Payment Mode:-</strong></td>
 				</tr>
@@ -159,7 +167,7 @@
 				</tr>
 			</table>
 			<br>
-			<input type="submit" value="Pay Now" name="Pay_Now">
+			<input type="submit" class = "button" value="PAY NOW" name="Pay_Now">
 		</form>
 		<!-- 
 •	Booking_Status

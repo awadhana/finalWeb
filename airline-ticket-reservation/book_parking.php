@@ -9,15 +9,18 @@
 			<link rel="stylesheet" type="text/css" href="main.css"/>
 		<link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
 		<style>
+		a{
+			font-size:25px;
+		}
 		*{
 				text-align:center;
 		}
 		html{
-		background: url(slide5.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+			  background: url(slide5.jpg) no-repeat center center fixed; 
+			  -webkit-background-size: cover;
+			  -moz-background-size: cover;
+			  -o-background-size: cover;
+			  background-size: cover;
 		}
 			input {
     			border: 1.5px solid #030337;
@@ -56,7 +59,7 @@
 
 					require_once('Database Connection file/mysqli_connect.php');
 					
-						$query="SELECT spot_no,type,price,available FROM parking_details where available = 1";
+						$query="SELECT spot_no,type,price,available FROM parking_details";
 						
 						$result = mysqli_query($dbc, $query);
 
@@ -99,8 +102,7 @@
 
     						echo "<input type=\"submit\" value=\"Select Spot\" name=\"Select\">";
     						echo "</form>";
-    					//}
-					//mysqli_stmt_close($stmt);
+    			
 					mysqli_close($dbc);
 		?>
 	</body>

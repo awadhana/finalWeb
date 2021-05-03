@@ -42,6 +42,9 @@
 			.set_nice_size{
 				font-size: 17pt;
 			}
+			table,tr,td{
+				margin:auto;
+			}
 		</style>
 	
 	</head>

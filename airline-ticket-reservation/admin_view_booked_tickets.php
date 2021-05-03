@@ -6,14 +6,16 @@
 		<title>
 			View Booked Tickets
 		</title>
-		<style>
+				<link rel="stylesheet" type="text/css" href="main.css"/>
+		<link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
+	<style>
 			a{
 			font-size:25px;
 		}
-		body{
+				body{
 				background-image: url('slide1.jpeg');
 				text-align:center;
-			}
+				}
 			input {
     			border: 1.5px solid #030337;
     			border-radius: 4px;
@@ -34,8 +36,6 @@
     			padding: 5.5px 44.5px;
 			}
 		</style>
-		<link rel="stylesheet" type="text/css" href="main.css"/>
-		<link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
 	</head>
 	<body>
 		<div>

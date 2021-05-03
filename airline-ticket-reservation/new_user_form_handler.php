@@ -1,6 +1,8 @@
 <html>
+
 	<head>
 		<title>Add New User</title>
+
 	</head>
 	<body>
 		<?php

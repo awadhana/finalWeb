@@ -6,7 +6,17 @@
 		<title>
 			Enter Travel/Ticket Details
 		</title>
+			<link rel="stylesheet" type="text/css" href="main.css"/>
+		<link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
 		<style>
+			a{
+			font-size:25px;
+		}
+		
+		body{
+				background-image: url('slide3.jpg');
+				text-align:center;
+				}
 			input {
     			border: 1.5px solid #030337;
     			border-radius: 4px;
@@ -32,20 +42,18 @@
     			border-radius: 4px;
     			padding: 6.5px 15px;
 			}
+			table,tr,td{
+				margin:auto;
+				font-weight:bold;
+			}
 		</style>
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
 	</head>
 	<body>
-		<img class="logo" src="images/shutterstock_22.jpg"/> 
-		<h1 id="title">
-			AADITH AIRLINES
-		</h1>
 		<div>
 			<ul>
 				<li><a href="home_page.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
 				<li><a href="customer_homepage.php"><i class="fa fa-desktop" aria-hidden="true"></i> Dashboard</a></li>
-				<li><a href="home_page.php"><i class="fa fa-plane" aria-hidden="true"></i> About Us</a></li>
+				<li><a href="home_page.php"><i class="fa fa-address-book" aria-hidden="true"></i> About Us</a></li>
 				<li><a href="home_page.php"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</a></li>
 				<li><a href="logout_handler.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
 			</ul>
@@ -96,7 +104,7 @@
 				echo "<table cellpadding=\"5\">";
 				echo "<tr>";
 				echo "<td class=\"fix_table_short\">Do you want access to our Premium Lounge?</td>";
-				echo "<td class=\"fix_table_short\">Do you want to opt for Priority Checkin?</td>";
+				echo "<td class=\"fix_table_short\">Do you want to opt for Priority Check-in?</td>";
 				echo "<td class=\"fix_table_short\">Do you want to purchase Travel Insurance?</td>";
 				echo "</tr>";
 				echo "<tr>";
@@ -112,7 +120,7 @@
 				echo "</tr>";
 				echo "</table>";
 				echo "<br><br>";
-				echo "<input type=\"submit\" value=\"Submit Travel/Ticket Details\" name=\"Submit\">";
+				echo "<input type=\"submit\" value=\"SUBMIT\" name=\"Submit\">";
 				echo "</form>";
 		?>
 		<!--Following data fields were empty!
