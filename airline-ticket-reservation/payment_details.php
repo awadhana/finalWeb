@@ -41,6 +41,9 @@
 			table,tr,td{
 				margin:auto;
 			}
+			td{
+				background-color:#929199;
+			}
 		</style>
 	</head>
 	<body>
@@ -166,7 +169,7 @@
 			?>
 			<table cellpadding="5" style='margin: auto'>
 				<tr>
-					<td class="fix_table"><strong>ENTER THE PAYMENT MODE:</strong></td>
+					<caption>ENTER THE PAYMENT MODE:</caption>
 				</tr>
 				<tr>
 					<td class="fix_table"><i class="fa fa-credit-card" aria-hidden="true"></i> Credit Card <input type="radio" name="payment_mode" value="credit card" checked></td>
@@ -202,10 +205,10 @@
 		</form>
 
 	</div>
-			<td style = "padding-left: 35px;" >
+			<td style = "margin:auto;" >
 				<div style="float:right;">
 		<label for = "s_code">Security Code</label>
-				<input id = "s_code"class="input" type="text" name="s_code" value="" maxlength="4" size="1" required><br>
+				<input id = "s_code"class="input" type="password" name="s_code" value="" maxlength="4" size="1" required><br>
 		</div>
 
 			</td>
@@ -220,7 +223,7 @@
 
 				</td>
 
-				<td style="padding-left: 35px">
+				<td style="display:inline-block;">
 				<div style="float:right">
 				<label for = "e_date">Card Expiration</label>
 				<select name="month" id="ExpDateM" value = "MM" >
