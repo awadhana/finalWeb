@@ -190,6 +190,18 @@
 						<input id = "card_number"class="input" type="text" name="card_number" value="" required><br>
 				</div>
 			</td>
+		<td>	<div class="well" >
+			Please, type some card number above.
+		</div>
+		</td>
+		<br>
+		<!-- <div class = "hidden">
+			<input type="text" id="cardType" name="card_type" value""><br>
+		</div> -->
+		
+		</form>
+
+	</div>
 			<td style = "padding-left: 35px;" >
 				<div style="float:right;">
 		<label for = "s_code">Security Code</label>
@@ -272,17 +284,7 @@
 				</tr>
 
 			</table>
-		<div class="well" >
-			Please, type some card number above.
-		</div>
-		<br>
-		<!-- <div class = "hidden">
-			<input type="text" id="cardType" name="card_type" value""><br>
-		</div> -->
-			<input style='margin: auto'type="submit" value="PAY NOW" name="Pay_Now">
-		</form>
-
-	</div>
+		
 
 				<!-- <div class="form-group">
 					<input class="input" type="text" placeholder="Type your card number">
@@ -305,6 +307,7 @@
 			// hidden.value = JSON.stringify(cards)
 		}
 	</script>
+	<input style='margin: auto'type="submit" value="PAY NOW" name="Pay_Now">
 
 	</body>
 </html>
