@@ -28,7 +28,7 @@
 			<ul>
 				<li><a href="home_page.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
 				<li><a href="customer_homepage.php"><i class="fa fa-desktop" aria-hidden="true"></i> Dashboard</a></li>
-				<li><a href="home_page.php"><i class="fa fa-address-book" aria-hidden="true"></i> About Us</a></li>
+				<li><a href="aboutus.php"><i class="fa fa-address-book" aria-hidden="true"></i> About Us</a></li>
 				<li><a href="logout_handler.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
 			</ul>
 		</div>
