@@ -5,14 +5,42 @@
 <html>
 	<head>
 		<title>Submit Payment Details</title>
+						<link rel="stylesheet" type="text/css" href="main.css"/>
+		<link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
+	<style>
+			a{
+			font-size:25px;
+		}
+				body{
+				background-image: url('slide1.jpeg');
+				text-align:center;
+				}
+			</style>
 	</head>
 	<body>
+	<div>
+			<ul class = "menu">
+					<li id= "one">
+				
+						
+					<ul>
+				<li><a href="admin_homepage.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+				<li><a href="admin_homepage.php"><i class="fa fa-desktop" aria-hidden="true"></i> Dashboard</a></li>
+				<li><a href="logout_handler.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+				</ul>
+			</li>
+			</ul>
+		</div>
+	<br><br><br><br><br>
+	
+	<h3> Your payment was successful </h3>
 		<?php
+		/*
 			if(isset($_POST['Pay_Now']))
 			{
-				$no_of_pass=$_SESSION['no_of_pass'];
-				$flight_no=$_SESSION['flight_no'];
-				$journey_date=$_SESSION['journey_date'];
+				$no_of_pass=$_SESSION['no_of_days'];
+				$flight_no=$_SESSION['parking_no'];
+			//	$journey_date=$_SESSION['journey_date'];
 				$class=$_SESSION['class'];
 				$pnr=$_SESSION['pnr'];
 				$payment_id=$_SESSION['payment_id'];
@@ -29,7 +57,7 @@
 				$Exp_year=$_POST['Year'];
 				// $card_type=$_POST['card_type'];
 				require_once('Database Connection file/mysqli_connect.php');
-				if($class=='economy')
+			/*	if($class=='economy')
 				{
 					$query="UPDATE Flight_Details SET seats_economy=seats_economy-? WHERE flight_no=? AND departure_date=?";
 					$stmt=mysqli_prepare($dbc,$query);
@@ -48,13 +76,13 @@
 					$affected_rows_1=mysqli_stmt_affected_rows($stmt);
 					echo $affected_rows_1.'<br>';
 					mysqli_stmt_close($stmt);
-				}
+				}*/
 				// mysqli_stmt_bind_result($stmt,$cnt);
 				// mysqli_stmt_fetch($stmt);
 				// echo $cnt;
 				/*
 				$response=@mysqli_query($dbc,$query);
-				*/
+				
 				if($affected_rows_1==1)
 				{
 					echo "Successfully Updated Seats<br>";
@@ -87,7 +115,7 @@
 			else
 			{
 				echo "Payment request not received";
-			}
+			}*/
 		?>
 	</body>
 </html>
