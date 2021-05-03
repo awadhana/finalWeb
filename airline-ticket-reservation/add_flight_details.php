@@ -11,7 +11,7 @@
 			font-size:25px;
 		}
 				body{
-				background-image: url('slide1.jpeg');
+				background-image: url('slide3.jpg');
 				text-align:center;
 				}
 			input {
