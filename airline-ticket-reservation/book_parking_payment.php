@@ -110,14 +110,6 @@
 			<br>
 			<input type="submit" value="Pay Now" name="Pay_Now">
 		</form>
-		<!-- 
-•	Booking_Status
-•	Payment_ID -->
 
-		<!--Following data fields were empty!
-			...
-			ADD VIEW FLIGHT DETAILS AND VIEW JETS/ASSETS DETAILS for ADMIN
-			PREDEFINED LOCATION WHEN BOOKING TICKETS
-		-->
 	</body>
 </html>

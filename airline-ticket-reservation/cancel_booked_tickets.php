@@ -9,6 +9,9 @@
 			<link rel="stylesheet" type="text/css" href="main.css"/>
 		<link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
 		<style>
+		a{
+			font-size:25px;
+		}
 			body{
 				background-image: url('slide1.jpeg');
 			}
@@ -41,7 +44,7 @@
 					<ul>
 				<li><a href="customer_homepage.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
 				<li><a href="customer_homepage.php"><i class="fa fa-desktop" aria-hidden="true"></i> Dashboard</a></li>
-		
+				<li><a href="home_page.php"><i class="fa fa-address-book" aria-hidden="true"></i> About Us</a></li>
 				<li><a href="logout_handler.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
 			</ul>
 			</li>
@@ -66,7 +69,7 @@
 				</tr>
 			</table>
 			<br>
-			<input type="submit" value="Cancel Ticket" name="Cancel_Ticket">
+			<input type="submit" value="CANCEL TICKET" name="Cancel_Ticket">
 		</form>
 		<!--Following data fields were empty!
 			...
